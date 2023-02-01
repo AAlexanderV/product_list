@@ -38,7 +38,7 @@ function App() {
               setError(e.toString());
             }
         );
-  }, [API]);
+  }, [API, dispatch]);
   
   if (error) {
     return (
