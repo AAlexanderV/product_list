@@ -2,8 +2,10 @@ function Pagination() {
    
   
     return (
-      <div className="Pagination">
-        
+      <div className="pagination">
+        <button>Previous page</button>
+        <button>Next page</button>
+
       </div>
     );
   }

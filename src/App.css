@@ -1,0 +1,57 @@
+.App{
+    width: 600px;
+    min-height: 600px;
+    height: fit-content;
+    background-color: rgb(255, 254, 220);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.filter{
+    width: 80%;
+    height: 30px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.filter button {
+    padding: 6px 15px;
+    border-radius: 8px;
+    background-color: rgb(115, 253, 147);
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.products_section{
+    padding: 15px 0;
+}
+.products_section ul{
+    padding: 0;
+}
+.products_section ul li{
+    padding: 5px 15px;
+    list-style-type: none;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.pagination{
+    margin-top: 15px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.pagination button{
+    width: 145px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgb(119, 210, 70);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
