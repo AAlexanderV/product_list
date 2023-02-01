@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 
-
 import FilterInput from "./components/FilterInput";
 import ProductsList from "./components/ProductsList";
 import Pagination from "./components/Pagination";
 import { setProducts } from "./features/products/productsSlice";
+import { setTotalPages } from "./features/pagination/paginationSlice";
 
 import './App.css';
 
@@ -14,7 +14,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const dispatch = useDispatch();
-  const page = useSelector((state:any) => state.page.value);
+  const page = useSelector((state:any) => state.pagination.currentPage);
   const idFilter = useSelector((state:any) => state.filter.value);
 
   const API = `https://reqres.in/api/products?page=${page}&per_page=5${idFilter ? `&id=${idFilter}` : ""}`;
@@ -30,26 +30,21 @@ function App() {
                 setIsLoaded(true);
                 setError(null);
                 dispatch(setProducts([result.data].flat()));
-                console.log(API);
-                console.log(result);
+                dispatch(setTotalPages(result.total_pages));
               }
             },
             (e) => {
-              console.log("result ERROR");
               setIsLoaded(true);
-              setError(e);
+              setError(e.toString());
             }
         );
   }, [API]);
-  // }, [API, page, idFilter]);
-
-
   
   if (error) {
     return (
       <div className="App">
         <FilterInput />
-        <p>Error: {error}</p>
+        <p>Something went wrong. {error}</p>
       </div>
     );
   } else if (!isLoaded) {

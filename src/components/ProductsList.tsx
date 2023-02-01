@@ -1,11 +1,10 @@
 import { useSelector } from "react-redux";
 
 
+import ProductItem from "./ProductItem";
+
 function ProductsList() {
   const productsList = useSelector((state:any) => state.products.value);
-   
-//  After clicking on a row a modal should be displayed and should present all item data. 
-    console.log("productsList:", productsList);
     
     return (
       <div className="products_section">
@@ -13,9 +12,13 @@ function ProductsList() {
         <ul>
           {productsList.map((item:any) => {
             return(
-              <li key={item.id} style={{backgroundColor: item.color}}>
-                <p>№ {item.id} - name: {item.name}, year: {item.year} </p>
-              </li>
+                <ProductItem 
+                  id={item.id}
+                  name={item.name} 
+                  year={item.year} 
+                  color={item.color}
+                  key={item.id}
+                />
             );
           })}
         </ul>

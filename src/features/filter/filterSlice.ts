@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import urlHandler from "../urlHandler"
 
 const initialState = ()=>{
     const searchParams = new URLSearchParams(document.location.search);
@@ -14,6 +15,8 @@ export const filterSlice = createSlice({
     reducers: {
         setFilter: (state, action) => {
             state.value = action.payload;
+
+            urlHandler("id", state.value);
         },
     }
 });

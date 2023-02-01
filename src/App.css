@@ -10,20 +10,31 @@
 }
 
 .filter{
-    width: 80%;
+    width: 90%;
     height: 30px;
     margin-bottom: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 .filter button {
     padding: 6px 15px;
+    margin-left: 10px;
     border-radius: 8px;
-    background-color: rgb(115, 253, 147);
-    font-weight: 500;
-    font-size: 16px;
+    background-color: rgb(119, 210, 70);
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
+}
+.filter input[type="text"]{
+    height: 40px;
+    border: 1px solid rgb(169, 169, 169);
+    border-radius: 10px;
+    padding-left: 12px;
+    color: rgba(0,0,0,.87);
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .products_section{
@@ -37,6 +48,9 @@
     list-style-type: none;
     font-weight: 700;
     font-size: 22px;
+}
+.product_item{
+    cursor: pointer;
 }
 
 .pagination{
@@ -54,4 +68,45 @@
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+}
+
+button:hover:disabled{
+    cursor:not-allowed;
+}
+
+/* MODAL */
+.overlay{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_container{
+    margin-top: 15vh;
+    background-color: #fff;
+    box-shadow: 5px 5px 30px;
+    width: 450px;
+    padding: 15px;
+}
+
+.modal_top{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.close_btn{
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.modal_content{
+    color: rgb(91, 91, 91);
 }
